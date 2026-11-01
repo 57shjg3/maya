@@ -24,16 +24,30 @@
     }
 
     function draw() {
-      // 每次画图前，先用带透明度的黑色盖住上一帧（形成拖尾效果）
-      background(26, 26, 26, 30); 
-      
-      // 把画笔颜色设置成随机的彩色
-      fill(random(0), random(255), random(255));
-      noStroke(); // 不要黑边
-      
-      // 在鼠标当前位置画一个圆（大小在 20 到 60 之间随机）
-      ellipse(mouseX, mouseY, ellipse(mouseX,mouseY,100));
-    }
+  // 背景照旧
+  background(26, 26, 26, 30); 
+  
+  fill(0, 255, 255); // 固定青色
+  noStroke(); 
+  
+  // 这是一个循环：让 i 从 0 变到 800，每次增加 50
+  for (let i = 0; i < 800; i = i + 50) {
+    // 在横坐标 i，纵坐标 200 的位置画一个半径为 20 的圆
+    ellipse(i, 200, 40);
+  }
+}function draw() {
+  // 背景照旧
+  background(26, 26, 26, 30); 
+  
+  fill(0, 255, 255); // 固定青色
+  noStroke(); 
+  
+  // 这是一个循环：让 i 从 0 变到 800，每次增加 50
+  for (let i = 0; i < 800; i = i + 50) {
+    // 在横坐标 i，纵坐标 200 的位置画一个半径为 20 的圆
+    ellipse(i, 200, 40);
+  }
+}
 
     // 让画布随窗口大小改变而自适应
     function windowResized() {

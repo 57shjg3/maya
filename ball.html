@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>弹跳球</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+        <style>
+            body{margin:0;overflow:hidden;background-color:#111;}
+        </style>
+    </head>
+    <body>
+        <script>
+            let x=100;
+            let y=100;
+            let speedX=30;
+            let speedY=20;
+            let x2=300;
+            let y2=300;
+            function setup(){
+                createCanvas(windowWidth,windowHeight);
+            }
+            function draw(){
+                background(17,17,17,20);
+
+                fill(0,255,150);
+                noStroke();
+                ellipse(x,y,50);
+                x=x+speedX;
+                y=y+speedY;
+                if(x>windowWidth||x<0){
+                    speedX=speedX*-1;
+                }
+                if(y>windowHeight||y<0){
+                    speedY=speedY*-1;
+                }
+                
+                fill(255,0,100);
+                ellipse(x2,y2,80);
+                x2=x2+x;
+            }
+            function windowResized(){
+                resizeCanvas(windowWidth,windowHeight);
+            }
+        </script>
+    </body>
+</html>
