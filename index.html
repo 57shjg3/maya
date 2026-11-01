@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>我的第一个动画</title>
+  <!-- 这一行是引入 p5.js 魔法库 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+  <style>
+    /* 这一块是 CSS，用来去掉页面默认的白边 */
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* 隐藏滚动条 */
+      background-color: #1a1a1a; /* 深色背景更酷 */
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // 下面这段是 JavaScript 代码
+    function setup() {
+      // 创建一个跟浏览器窗口一样大的画布
+      createCanvas(windowWidth, windowHeight);
+    }
+
+    function draw() {
+      // 每次画图前，先用带透明度的黑色盖住上一帧（形成拖尾效果）
+      background(26, 26, 26, 30); 
+      
+      // 把画笔颜色设置成随机的彩色
+      fill(random(0), random(255), random(255));
+      noStroke(); // 不要黑边
+      
+      // 在鼠标当前位置画一个圆（大小在 20 到 60 之间随机）
+      ellipse(mouseX, mouseY, ellipse(mouseX,mouseY,100));
+    }
+
+    // 让画布随窗口大小改变而自适应
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+    }
+  </script>
+</body>
+</html>
